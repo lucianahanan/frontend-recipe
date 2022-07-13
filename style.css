@@ -1,0 +1,268 @@
+/*---------- resets ----------*/
+* {
+  box-sizing: border-box;
+  margin-block: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  margin: 0;
+  padding-block: 0;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  transition: 200ms;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+img {
+  border: 0;
+}
+
+/*---------- globals ----------*/
+:root {
+  --background: #eee;
+  --primary: #1F0B09;
+  --text: #483F32;
+  --white: #ffffff;
+}
+
+body {
+  align-items: center;
+  background-color: var(--background);
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "EB Garamond", Arial, Helvetica, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 3.2rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1, h2 {
+  color: var(--primary);
+  font-family: "EB Garamond", Arial, Helvetica, sans-serif;
+  font-size: clamp(3.6rem, 5vw, 6.4rem);
+  font-weight: 300;
+  line-height: 114%;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-style: italic;
+  font-size: clamp(3.4rem, 5vw, 5.6rem);
+}
+
+p {
+  font-size: clamp(2.2rem, 5vw, 2.6rem);
+  margin-bottom: 1.6rem;
+}
+
+a {
+  color: var(--primary);
+  font-weight: 400;
+  text-decoration: none;
+  transition: 200ms;
+}
+
+a:hover {
+  color: var(--title);
+}
+
+a strong {
+  font-weight: 600;
+}
+
+.center {
+  text-align: center;
+}
+
+/*---------------------------*/
+/*---------- body --------------------------------------------------*/
+body {
+  background: url(./assets/background-photo.jpg) no-repeat top left;
+  background-position: fixed;
+  background-size: cover;
+  padding: 11rem 13rem;
+  /*---------------------------*/
+}
+@media (max-width: 1200px) {
+  body {
+    padding: 11rem 4rem;
+  }
+}
+@media (max-width: 800px) {
+  body {
+    padding: 11rem 2rem;
+  }
+}
+
+/*---------- logo --------------------------------------------------*/
+#logo {
+  width: 18.7rem;
+  height: 18.2rem;
+  z-index: 2;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 9.35rem);
+  /*---------------------------*/
+}
+@media (max-width: 800px) {
+  #logo {
+    width: 14.7rem;
+    height: 14.2rem;
+    left: calc(50% - 7.35rem);
+  }
+}
+@media (max-width: 480px) {
+  #logo {
+    width: 14.7rem;
+    height: 14.2rem;
+    left: calc(50% - 7.35rem);
+  }
+}
+
+/*---------- main --------------------------------------------------*/
+main {
+  margin-right: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--white);
+  margin-top: -2rem;
+  min-width: 32rem;
+  padding-top: 8.4rem;
+  padding-bottom: 6.6rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  /*---------------------------*/
+}
+@media (max-width: 800px) {
+  main {
+    margin-top: -4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (max-width: 480px) {
+  main {
+    margin-top: -4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+main h1 {
+  max-width: 74rem;
+  margin: 0 auto;
+}
+main h2 {
+  /*---------------------------*/
+}
+@media (max-width: 1200px) {
+  main h2 {
+    text-align: left;
+  }
+}
+main p.title {
+  text-align: center;
+}
+main p.ingredients {
+  text-align: right;
+  line-height: 4rem;
+  /*---------------------------*/
+}
+@media (max-width: 1200px) {
+  main p.ingredients {
+    text-align: left;
+  }
+}
+main p.steps {
+  text-align: left;
+}
+main p.footer {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+#recipe {
+  display: grid;
+  margin-bottom: 2rem;
+  width: 100%;
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
+  grid-template-areas: "prep photo photo serving" "ingred ingred step step";
+  /*---------------------------*/
+}
+@media (max-width: 1200px) {
+  #recipe {
+    grid-template-areas: "photo photo" "prep serving" "ingred ingred" "step step";
+  }
+}
+@media (max-width: 620px) {
+  #recipe {
+    grid-template-areas: "photo photo" "prep prep" "serving serving" "ingred ingred" "step step";
+  }
+}
+#recipe .grid-prep {
+  grid-area: prep;
+}
+#recipe .grid-photo {
+  grid-area: photo;
+}
+#recipe .grid-serving {
+  grid-area: serving;
+}
+#recipe .grid-ingred {
+  grid-area: ingred;
+}
+#recipe .grid-step {
+  grid-area: step;
+}
+#recipe .grid-prep {
+  text-align: center;
+  min-width: 18rem;
+}
+#recipe .grid-prep img {
+  margin-bottom: 2rem;
+}
+#recipe .grid-photo {
+  text-align: center;
+}
+#recipe .grid-photo img {
+  width: 100%;
+}
+#recipe .grid-serving {
+  text-align: center;
+  min-width: 18rem;
+}
+#recipe .grid-serving img {
+  margin-bottom: 2rem;
+}
+#recipe .grid-ingred {
+  text-align: right;
+}
+#recipe .grid-step {
+  text-align: left;
+}
